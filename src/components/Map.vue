@@ -1,7 +1,7 @@
 <template>
   <div id="map-wrapper">
     <div id="map">
-      <img ref="p1" src="DC_buildings_lots.svg">
+      <img ref="p1" src="DC_buildings_lots_blue.gif">
     </div>
   </div>
 </template>
@@ -12,6 +12,7 @@
   gsap.registerPlugin(Draggable);
 
   export default {
+    name: 'Map',
     mounted() {
       Draggable.create(this.$refs.p1);
     }
@@ -20,7 +21,6 @@
 
 <style lang="scss" scoped>
   #map-wrapper {
-    border: 1px solid blue;
     position: fixed;
     top: 0;
     left: 0;

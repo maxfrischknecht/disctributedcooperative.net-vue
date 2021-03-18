@@ -1,18 +1,16 @@
 <template>
   <div id="home">
     <Map></Map>
-    <!-- <b-container>
-      <b-row>
-        <b-col cols="12" offset="6">
-          <h1>Hello World</h1>
-        </b-col>
-      </b-row>
-    </b-container> -->
+    <Overlay :overlay="overlay" :showHide="showHide"></Overlay>
+    <div id="page-title" :class="{ moved : overlay }">
+      <h1 @click="overlay = !overlay">The Distributed Cooperative</h1>
+    </div>
   </div>
 </template>
 
 <script>
 import Map from "@/components/Map";
+import Overlay from "@/components/Overlay";
 
 export default {
   name: 'app',
@@ -25,13 +23,19 @@ export default {
   }),
   components: {
     Map,
-    
+    Overlay
   },
   data() {
     return {
       document: [],
+      overlay: false
     };
   },
+  methods: {
+    showHide() {
+      this.overlay = !this.overlay;
+    }
+  }
 
 }
 </script>
@@ -39,4 +43,27 @@ export default {
 <style lang="scss">
 @import "../assets/css/master.scss";
 
+#page-title {
+  transition: 0.4s;
+  transform: translateY(48vh);
+  width: 100%;
+  height: 4.8rem;
+  position: fixed;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+  &.moved {
+    width: 50%;
+    transition: 1s
+  }
+  & h1 {
+    margin-top: 0.4rem;
+    cursor: pointer;
+    // background-color: white;
+    padding: 0.6rem 0.8rem;
+    user-select: none;
+  }
+}
 </style>
