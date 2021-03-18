@@ -1,4 +1,4 @@
-# DD Boilerplate Vue
+# Distributed Cooperative
 
 ## Project setup
 ```

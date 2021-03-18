@@ -1,71 +1,95 @@
-/* Font Face
-–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-$fontimport: 'PlainRegular-Web';
-
-@font-face {
-  font-family: $fontimport;
-    src: url('~@/assets/fonts/'+$fontimport+'.eot') format('embedded-opentype'),
-         url('~@/assets/fonts/'+$fontimport+'.woff2') format('woff2'),
-         url('~@/assets/fonts/'+$fontimport+'.woff') format('woff'),
-         url('~@/assets/fonts/'+$fontimport+'.svg#'+$fontimport+'') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Variables
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
-$sans: $fontimport, "Helvetica", "Arial", sans-serif;
+$helvetica: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
 
 @mixin font-basics {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
-  color: $c-black;
+  color: $color-black;
+  // padding: 0px;
+  // margin: 0px;
   letter-spacing: 0;
   text-transform: none;
   font-weight: 400;
-  transition:0.3s;
 }
 
-// TITLES 
-@mixin title-mobile {
+// XL SIZE
+@mixin helvetica-xl-mobile {
   @include font-basics;
-  font-family: $sans;
-  font-size: 4rem;
+  font-family: $helvetica;
+  font-size: 4.8rem;
+  letter-spacing: 1.1;
   line-height: 1;
 }
 
-@mixin title-desktop {
+@mixin helvetica-xl-desktop {
   @include font-basics;
-  font-family: $sans;
-  font-size: 7rem;
+  font-family: $helvetica;
+  font-size: 4.8rem;
+  letter-spacing: 1.1;
   line-height: 1;
 }
 
-// TEXTS
-// BASE CLASS FOR ALL TEXTS
-@mixin text-mobile {
+// REGULAR SIZE
+@mixin helvetica-m-mobile {
   @include font-basics;
-  font-family: $sans;
-  font-size: 2.0rem;
-  line-height: 1;
+  font-family: $helvetica;
+  font-size: 2.4rem;
+  letter-spacing: 0.5;
+  line-height: 3rem;
 }
 
-@mixin text-desktop {
+@mixin helvetica-m-desktop {
   @include font-basics;
-  font-family: $sans;
-  font-size: 2.5rem;
-  line-height: 1;
+  font-family: $helvetica;
+  font-size: 2.4rem;
+  letter-spacing: 0.5;
+  line-height: 3rem;
+}
+
+// SMALL SIZE
+@mixin helvetica-s-mobile {
+  @include font-basics;
+  font-family: $helvetica;
+  font-size: 1.5rem;
+  letter-spacing: 0.25;
+  line-height: 1.8rem;
+}
+
+@mixin helvetica-s-desktop {
+  @include font-basics;
+  font-family: $helvetica;
+  font-size: 1.5rem;
+  letter-spacing: 0.25;
+  line-height: 1.8rem;
 }
 
 /* Mobile Sizing
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 // base classe for everything
-body, h1, h2, h3, h4, h5, h6, p, li {
-  @include text-mobile;
+// base classe for everything
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  @include helvetica-m-mobile;
 }
-.title         { @include title-mobile; }
+.type-xl {
+  @include helvetica-xl-mobile;
+}
+.type-s {
+  @include helvetica-s-mobile;
+}
+.type-s p {
+  @include helvetica-s-desktop;
+}
 
 // create a class for each font different from the base class
 // e.g. dia-small, dia-medium, dia-large, times-small, times-medium, times-large
@@ -75,11 +99,27 @@ body, h1, h2, h3, h4, h5, h6, p, li {
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 @media (min-width: 768px) {
   // body
-  body, h1, h2, h3, h4, h5, h6, p, li {
-    @include text-desktop;
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li {
+    @include helvetica-m-desktop;
   }
-  .title         { @include title-desktop; }
+  .type-xl {
+    @include helvetica-xl-desktop;
+  }
+  .type-s {
+    @include helvetica-s-desktop;
+  }
 
+  .type-s p {
+    @include helvetica-s-desktop;
+  }
 }
 
 /* General Font Settings
@@ -92,19 +132,28 @@ body, h1, h2, h3, h4, h5, h6, p, li {
   }
 }
 
-::-moz-selection { /* Code for Firefox */
-  color: $c-text-sel;
-  background-color: $c-text-sel-bg;
+.type-center,
+.type-center p {
+  text-align: center;
+}
+
+span.spacing {
+  letter-spacing: 1.2rem;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
   // background-color: rgba(255, 0, 0, 0.99);
 }
 ::selection {
-  color: $c-text-sel;
-  background-color: $c-text-sel-bg;
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
   // background-color: rgba(255, 0, 0, 0.99);
 }
 ::-webkit-selection {
-  color: $c-text-sel;
-  background-color: $c-text-sel-bg;
+  color: $color-text-selection;
+  background-color: $color-text-selection-background;
   // background-color: rgba(255, 0, 0, 0.99);
 }
-
