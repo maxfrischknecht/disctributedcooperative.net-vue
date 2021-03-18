@@ -14,12 +14,12 @@ import Overlay from "@/components/Overlay";
 
 export default {
   name: 'app',
-  metaInfo: () => ({
+    metaInfo: () => ({
     link: [{ rel: "favicon", href: "favicon.ico" }],
     // if no subcomponents specify a metaInfo.title, this title will be used
     title: "The Distributed Cooperative",
     // all titles will be injected into this template
-    description: "The Distributed Cooperative",
+    description: "Addressing the generational challenge of scaling non-speculative housing models, the Distributed Cooperative demonstrates how customised scripting can help reimagine mixed-use cooperative housing at a neighbourhood scale. ",
   }),
   components: {
     Map,
