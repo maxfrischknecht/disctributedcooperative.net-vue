@@ -1,9 +1,15 @@
 <template>
   <div id="home">
+    <div id="ten-logo" :class="{ moved : overlay }">
+      <h1><a href="https://ten.studio" target="_blank">X = ( T = E = N )</a></h1>
+    </div>
     <Map></Map>
     <Overlay :overlay="overlay" :showHide="showHide"></Overlay>
     <div id="page-title" :class="{ moved : overlay }">
-      <h1 @click="overlay = !overlay">The Distributed Cooperative</h1>
+      <h2 @click="overlay = !overlay">
+        The Distributed Cooperative<br>
+        <span>Prototype One: Zürich</span>
+      </h2>
     </div>
   </div>
 </template>
@@ -42,28 +48,49 @@ export default {
 
 <style lang="scss">
 @import "../assets/css/master.scss";
-
+#ten-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0.8rem;
+  height: 4.8rem;
+  position: fixed;
+  z-index: 90;
+  transition: 1s;
+  &.moved {
+    width: 50%;
+    transition: 1s
+  }
+}
 #page-title {
   transition: 0.4s;
   transform: translateY(48vh);
   width: 100%;
-  height: 4.8rem;
+  // height: 4.8rem;
   position: fixed;
   z-index: 90;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 1s;
+  // mix-blend-mode: difference;
   &.moved {
     width: 50%;
     transition: 1s
   }
-  & h1 {
+  & h2 {
+    text-align: center;
     margin-top: 0.4rem;
     cursor: pointer;
-    // background-color: white;
-    padding: 0.6rem 0.8rem;
+    // padding: 0.6rem 0.8rem;
     user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    & span {
+      letter-spacing: 0.2rem;
+      font-size: 2rem;
+      text-transform: none;
+    }
   }
 }
 </style>
