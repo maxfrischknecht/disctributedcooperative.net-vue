@@ -1,7 +1,7 @@
 <template>
   <div id="map-wrapper">
     <div id="map">
-      <img ref="p1" src="DC_buildings_lots_blue.gif">
+      <img ref="p1" src="dc_zurich_map_5500.gif">
     </div>
   </div>
 </template>
@@ -30,9 +30,9 @@
     & #map {
       position: relative;
       & img {
-        min-width: 6000px;
+        min-width: 5500px;
         height: auto;
-        transform: translate(-2500px,-2200px);
+        transform: translate(-2100px,-2100px);
       }
     }
   }
