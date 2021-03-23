@@ -114,7 +114,8 @@ li {
     @include helvetica-xl-desktop;
   }
   .type-s {
-    @include helvetica-s-desktop;
+    // @include helvetica-s-desktop;
+    @include helvetica-m-desktop;
   }
 
   .type-s p {
@@ -125,7 +126,8 @@ li {
 /* General Font Settings
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––– */
 .subtitle {
-  font-weight: 600;
+  // font-weight: 600;
+  text-decoration: underline;
 }
 
 // create spacing between richtext p's

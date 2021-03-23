@@ -15,11 +15,11 @@
       </div> -->
       <b-container fluid>
         <b-row class="content-block">
-          <b-col cols="3"><p>About</p></b-col>
+          <b-col cols="3"><h3>About</h3></b-col>
           <b-col cols="9"><p class="type-s" v-html="entry.introductionText"></p></b-col>
         </b-row>
         <b-row class="content-block">
-          <b-col cols="3"><p>Case study Zurich</p></b-col>
+          <b-col cols="3"><h3>Case study Zurich</h3></b-col>
           <b-col cols="9"><p class="type-s">{{entry.caseStudyText}}</p></b-col>
         </b-row>
         <b-row class="content-block">
@@ -30,20 +30,20 @@
           </b-col>
         </b-row>
         <b-row class="content-block">
-          <b-col cols="3"><p>Featured</p></b-col>
+          <b-col cols="3"><h3>Featured</h3></b-col>
           <b-col cols="9">
-            <p class="type-s"><a href="https://deepcity.ch/">Deep City</a>, 2020-21 International Latsis Symposium, EPFL, Lausanne, CH</p>
-            <p class="type-s"><a href="https://futurearchitectureplatform.org">Ideas 2020</a>, Future Architecture Platform, Ljubljana, SI</p>
-            <p class="type-s"><a href="https://projectarchitecture.com/city-as-verb">City as Verb</a>, Seoul New Hall of Architecture and Urbanism, Seoul, KO</p>
-            <p class="type-s"><a href="http://seoulbiennale.org/">Collective City</a>, The Seoul Biennale of Architecture and Urbanism 2019, Seoul, KO</p>
+            <p class="type-s"><a class="inline-link" href="https://deepcity.ch/">Deep City</a>, 2020-21 International Latsis Symposium, EPFL, Lausanne, CH</p>
+            <p class="type-s"><a class="inline-link" href="https://futurearchitectureplatform.org">Ideas 2020</a>, Future Architecture Platform, Ljubljana, SI</p>
+            <p class="type-s"><a class="inline-link" href="https://projectarchitecture.com/city-as-verb">City as Verb</a>, Seoul New Hall of Architecture and Urbanism, Seoul, KO</p>
+            <p class="type-s"><a class="inline-link" href="http://seoulbiennale.org/">Collective City</a>, The Seoul Biennale of Architecture and Urbanism 2019, Seoul, KO</p>
           </b-col>
         </b-row>
         <b-row class="content-block">
-          <b-col cols="3"><p>My City</p></b-col>
-          <b-col cols="9"><p class="type-s">I am interested in a collaborating on my city: <a href="mailto:scott@ten.studio?subject=Lets%20make%20a%20Distributed%20Cooperative%20in%20[YOURCITY]">Drop a line!</a></p></b-col>
+          <b-col cols="3"><h3>My City</h3></b-col>
+          <b-col cols="9"><p class="type-s">I am interested in a collaborating on my city: <a class="inline-link" href="mailto:scott@ten.studio?subject=Lets%20make%20a%20Distributed%20Cooperative%20in%20[YOURCITY]">Get in contact.</a></p></b-col>
         </b-row>
         <b-row class="content-block">
-          <b-col cols="3"><p>Team</p></b-col>
+          <b-col cols="3"><h3>Team</h3></b-col>
           <b-col cols="9">
             <p class="type-s s-b-8"><span>Scott Lloyd</span> is an architect based in Zurich. He is a founding member of TEN Studio where he works on architecture, research and urban transformation.</p>
             <p class="type-s s-b-8"><span>Alexis Kalagas</span>  is an urban strategist and writer based in Melbourne. His work focuses on innovation in urban development through emerging digital technologies.</p>
@@ -52,7 +52,7 @@
           </b-col>
         </b-row>
         <b-row class="content-block">
-          <b-col cols="3"><p>Credits</p></b-col>
+          <b-col cols="3"><h3>Credits</h3></b-col>
           <b-col cols="9">
             <p class="type-s subtitle">The Distributed Cooperative</p>
             <p class="type-s s-b-8">Scott Lloyd (TEN), Alexis Kalagas, Nemanja Zimonjic (TEN)</p>
@@ -108,7 +108,7 @@
 
 <style lang="scss" scoped>
 #overlay {
-  padding: 0.8rem 0rem;
+  padding: 1.2rem 0rem 0rem 0rem;
   width: 50%;
   height: 100vh;
   position: fixed;
@@ -118,7 +118,8 @@
   background-color: white;
   overflow-y: scroll;
   background: #FFFFFF;
-  box-shadow: 0 20px 20px 10px rgba(37,86,161,0.24);
+  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+  // mix-blend-mode: exclusion;
 }
 #close-icon {
   position: fixed;
@@ -127,11 +128,18 @@
   cursor: pointer;
 }
 .content-block {
-  padding-bottom: 4.8rem;
+  padding-bottom: 3rem;
   & img {
     width: 100%;
   }
 }
+h3 {
+  // letter-spacing: 0.2rem;
+  // font-size: 1.5rem;
+  // line-height: 1.8rem;
+  // font-weight: 600;
+}
+
 
 .panelFade-enter-active, .panelFade-leave-active {
   transition: transform 1s;

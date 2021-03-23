@@ -13,7 +13,7 @@ $border-weight: 0.15rem;
 }
 
 .s-b-8 {
-  padding-bottom: 0.8rem;
+  padding-bottom: 2.2rem;
   &:last-of-type {
     padding-bottom: 0rem;
   }
@@ -58,6 +58,18 @@ a {
     text-decoration: none;
     letter-spacing: 0.8rem;
   }
+}
+
+a.inline-link {
+  text-decoration: none;
+  color: rgb(88, 134, 240);
+  transition: 0.5s;
+  &:hover {
+    letter-spacing: 0;
+    color: rgb(88, 134, 240);
+    text-decoration: underline;
+    transition: 0.5s;
+ }
 }
 
 button {
