@@ -18,16 +18,16 @@
           <b-col cols="3"><h3>About</h3></b-col>
           <b-col cols="9"><p class="type-s" v-html="entry.introductionText"></p></b-col>
         </b-row>
-        <b-row class="content-block">
-          <b-col cols="3"><h3>Case study Zurich</h3></b-col>
-          <b-col cols="9"><p class="type-s">{{entry.caseStudyText}}</p></b-col>
-        </b-row>
-        <b-row class="content-block">
+         <b-row class="content-block">
           <b-col cols="12" offset="0">
             <div style="padding:56.25% 0 0 0;position:relative;">
               <iframe src="https://player.vimeo.com/video/357958503?title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
           </b-col>
+        </b-row>
+        <b-row class="content-block">
+          <b-col cols="3"><h3>Case study Zurich</h3></b-col>
+          <b-col cols="9"><p class="type-s">{{entry.caseStudyText}}</p></b-col>
         </b-row>
         <b-row class="content-block">
           <b-col cols="3"><h3>Featured</h3></b-col>
@@ -117,8 +117,8 @@
   right: 0;
   background-color: white;
   overflow-y: scroll;
-  background: #FFFFFF;
-  box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
+  // background: #FFFFFF;
+  // box-shadow: 0 20px 20px 10px rgba(0, 0, 0, 0.2);
   // mix-blend-mode: exclusion;
 }
 #close-icon {
@@ -133,13 +133,6 @@
     width: 100%;
   }
 }
-h3 {
-  // letter-spacing: 0.2rem;
-  // font-size: 1.5rem;
-  // line-height: 1.8rem;
-  // font-weight: 600;
-}
-
 
 .panelFade-enter-active, .panelFade-leave-active {
   transition: transform 1s;

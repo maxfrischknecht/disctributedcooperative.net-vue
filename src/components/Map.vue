@@ -29,8 +29,10 @@
     overflow: hidden;
     & #map {
       position: relative;
+      transition: 0.3s;
       & img {
         min-width: 5500px;
+        transition: 0.3s;
         height: auto;
         transform: translate(-2100px,-2100px);
       }
